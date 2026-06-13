@@ -10,11 +10,11 @@
     };
     
     outputs = { nixpkgs, home-manager, ... }: {
-        nixosConfigurations.waga = nixpkgs.lib.nixosSystem {
+        nixosConfigurations.goti-nixOS = nixpkgs.lib.nixosSystem {
             system = "x86_64-linux";
             modules = [
                 ./configuration.nix
-                home-manager.nixosModules.home-manager
+                (home-manager.nixosModules.home-manager
                 {
                     home-manager = {
                         useGlobalPkgs = true; 
@@ -24,7 +24,7 @@
          
 
                    };
-                }
+                })
             ];
         };
     };
