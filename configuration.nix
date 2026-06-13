@@ -51,9 +51,8 @@
     btop
     cmatrix
     fastfetch
-    rofi-wayland
+    rofi
     font-awesome
-    nerdfonts
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
