@@ -53,6 +53,7 @@
     fastfetch
     rofi
     font-awesome
+    discord
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
