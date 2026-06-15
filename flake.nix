@@ -20,10 +20,9 @@
                         useGlobalPkgs = true; 
                         useUserPackages = true;
                         users.agar = import ./home.nix;
-                        backupFileExtension = "backup";
-         
 
                    };
+                    
                 }
             ];
         };

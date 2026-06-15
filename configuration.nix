@@ -23,8 +23,6 @@
   # Set your time zone.
   time.timeZone = "Europe/Madrid";
 
-  services.getty.autologinUser = "agar";
-
   programs.hyprland = {
       enable = true;
       xwayland.enable = true; 
@@ -35,10 +33,13 @@
     enable = true;
 
     settings.default_session = {
-      command = "Hyprland";
+      command = "dbus-run-session Hyprland";
       user = "agar";
     };
   };
+
+ 
+
 
 
   users.users.agar = {
@@ -63,8 +64,6 @@
     fastfetch
     rofi
     font-awesome
-    bluez
-    blueman
     xclip
     neovim
   ];
@@ -79,6 +78,7 @@
 
   services.blueman.enable = true;
   
+  systemd.services.home-manager-agar.enable = false;
   # Select internationalisation properties.
   # i18n.defaultLocale = "en_US.UTF-8";
   # console = {
