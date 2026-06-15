@@ -71,6 +71,7 @@
     font-awesome
     xclip
     neovim
+    home-manager
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

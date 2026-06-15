@@ -9,9 +9,13 @@
         };
     };
     
-    outputs = { nixpkgs, home-manager, ... }: {
+    outputs = { nixpkgs, home-manager, ... }: 
+    let
+        system = "x86_64-linux";
+    in
+    {
         nixosConfigurations.goti-nixOS = nixpkgs.lib.nixosSystem {
-            system = "x86_64-linux";
+            inherit system;
             modules = [
                 ./configuration.nix
                 home-manager.nixosModules.home-manager
@@ -20,11 +24,14 @@
                         useGlobalPkgs = true; 
                         useUserPackages = true;
                         users.agar = import ./home.nix;
-
-                   };
-                    
+                    };
                 }
             ];
+        };
+
+        homeConfigurations.agar = home-manager.lib.homeManagerConfiguration {
+            pkgs = nixpkgs.legacyPackages.${system};
+            modules = [ ./home.nix ];
         };
     };
 }
