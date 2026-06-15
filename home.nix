@@ -8,9 +8,14 @@
         enable = true;
         shellAliases = {
             buh = "fastfetch";
+            switch = "sudo nixos-rebuild switch --flake"
         };
         profileExtra = ''
                 exec hyprland
         '';
     };
+     
+    home.packages = with pkgs; [
+      vesktop
+    ];
 }

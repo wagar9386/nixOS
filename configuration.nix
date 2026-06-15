@@ -56,6 +56,7 @@
     discord
     bluez
     blueman
+    xclip
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -63,11 +64,11 @@
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-  {
-    hardware.bluetooth.enable = true;
+  
+  hardware.bluetooth.enable = true;
 
-    services.blueman.enable = true;
-  }
+  services.blueman.enable = true;
+  
   # Select internationalisation properties.
   # i18n.defaultLocale = "en_US.UTF-8";
   # console = {
