@@ -33,13 +33,18 @@
     enable = true;
 
     settings.default_session = {
-      command = "dbus-run-session Hyprland";
+      command = "${pkgs.hyprland}/bin/start-hyprland";
       user = "agar";
     };
   };
 
  
-
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-hyprland
+    ];
+  };
 
 
   users.users.agar = {
