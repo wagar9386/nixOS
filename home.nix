@@ -154,6 +154,22 @@
         '';
     };
     
+    # Auto-start waybar as a systemd user service
+    systemd.user.services.waybar = {
+        Unit = {
+            Description = "Waybar status bar";
+            PartOf = [ "graphical-session.target" ];
+            After = [ "graphical-session-pre.target" ];
+        };
+        Service = {
+            Type = "simple";
+            ExecStart = "${pkgs.waybar}/bin/waybar";
+            Restart = "on-failure";
+        };
+        Install = {
+            WantedBy = [ "graphical-session.target" ];
+        };
+    };
     
     home.packages = with pkgs; [
         vesktop
