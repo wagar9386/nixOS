@@ -33,7 +33,7 @@
     enable = true;
 
     settings.default_session = {
-      command = "${pkgs.hyprland}/bin/start-hyprland";
+      command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd Hyprland";
       user = "agar";
     };
   };

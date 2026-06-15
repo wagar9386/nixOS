@@ -13,7 +13,29 @@
        
     }; 
     programs.waybar = {
-      enable = true;
+  enable = true;
+  settings = {
+    mainBar = {
+      layer = "top";
+      position = "top";
+      height = 30;
+      modules-left = [ "hyprland/workspaces" ];
+      modules-right = [ "clock" ];
+    };
+  };
+  style = ''
+    * {
+      border: none;
+      border-radius: 0;
+      font-family: monospace;
+      font-size: 13px;
+      min-height: 0;
+     }
+    window#waybar {
+      background: #282c34;
+      color: #abb2bf;
+      }
+     '';
     };
     home.packages = with pkgs; [
       vesktop
