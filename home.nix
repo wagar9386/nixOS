@@ -7,11 +7,14 @@
     programs.bash = {
         enable = true;
         shellAliases = {
-            buh = "fastfetch";
-            switch = "sudo nixos-rebuild switch --flake .#goti-nixOS";
-        };
-       
-    }; 
+        buh = "fastfetch";
+    };
+    bashrcExtra = ''
+      switch() {
+        cd /home/agar/nixOS && sudo nixos-rebuild switch --flake .#goti-nixOS
+      }
+    '';
+}; 
     programs.waybar = {
   enable = true;
   settings = {
