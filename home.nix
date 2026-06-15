@@ -22,159 +22,251 @@
           }
         '';
     }; 
-    
+     
+
+    # Modern minimal Waybar config
     programs.waybar = {
         enable = true;
         settings = [
             {
-                name = "mainBar";
+                name = "main";
                 layer = "top";
                 position = "top";
-                height = 40;
-                margin = "10px 10px 0px 10px";
-                modules-left = [ "hyprland/workspaces" "hyprland/window" ];
-                modules-center = [ "clock" ];
-                modules-right = [ "battery" "network" "pulseaudio" "tray" ];
+                height = 35;
+                margin = "8px 8px 0px 8px";
+                spacing = 0;
+                
+                modules-left = [ "hyprland/workspaces" ];
+                modules-center = [ "hyprland/window" ];
+                modules-right = [ "pulseaudio" "network" "clock" "tray" ];
                 
                 "hyprland/workspaces" = {
                     format = "{icon}";
                     format-icons = {
-                        "1" = "一";
-                        "2" = "二";
-                        "3" = "三";
-                        "4" = "四";
-                        "5" = "五";
+                        "1" = "󰣇 ";
+                        "2" = "󰊠 ";
+                        "3" = "󰓓 ";
+                        "4" = "󰍹 ";
+                        "5" = "󰎆 ";
                     };
+                    all-outputs = true;
                 };
                 
                 "hyprland/window" = {
                     format = "{}";
-                    max-length = 50;
+                    max-length = 80;
+                    rewrite = {
+                        "(.*) - Mozilla Firefox" = "󰈹  $1";
+                        "(.*) - Neovim" = "  $1";
+                        "(.*) - kitty" = "  Terminal";
+                    };
                 };
                 
                 "clock" = {
-                    format = "🕐 {:%a %d %b  %H:%M}";
-                    tooltip-format = "<big>{:%c}</big>";
-                };
-                
-                "battery" = {
-                    format = "{icon} {capacity}%";
-                    format-icons = [ "🔋" "🔋" "🔋" "🔋" "⚡" ];
-                };
-                
-                "network" = {
-                    format-wifi = "📶 {essid} {signalStrength}%";
-                    format-ethernet = "🌐 {ifname}";
-                    format-disconnected = "❌ Offline";
+                    format = "󰥔 {:%H:%M}";
+                    tooltip-format = "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>";
                 };
                 
                 "pulseaudio" = {
                     format = "{icon} {volume}%";
-                    format-muted = "🔇";
-                    format-icons = [ "🔉" "🔊" ];
+                    format-muted = "󰖁 {volume}%";
+                    format-icons = {
+                        default = [ "󰕿" "󰙀" "󰙁" ];
+                    };
+                    scroll-step = 5;
+                };
+                
+                "network" = {
+                    format-wifi = "󰤨 {essid}";
+                    format-ethernet = "󰌐 Wired";
+                    format-disconnected = "󰌐 Offline";
+                    tooltip-format = "Signal: {signalStrength}%";
                 };
                 
                 "tray" = {
-                    icon-size = 18;
-                    spacing = 5;
+                    icon-size = 16;
+                    spacing = 8;
                 };
             }
         ];
         style = ''
           * {
             border: none;
-            border-radius: 10px;
-            font-family: "JetBrains Mono", "Font Awesome 6 Free";
-            font-size: 14px;
+            border-radius: 8px;
+            font-family: "JetBrains Mono", "Noto Sans";
+            font-size: 12px;
             min-height: 0;
           }
           
           window#waybar {
-            background: rgba(46, 52, 64, 0.9);
-            color: #eceff4;
+            background: rgba(31, 30, 46, 0.85);
+            color: #e0def4;
+            border-radius: 8px;
+          }
+          
+          #workspaces {
+            background: transparent;
+            margin-right: 10px;
           }
           
           #workspaces button {
             background: transparent;
-            padding: 5px 10px;
-            color: #d8dee9;
-            margin-right: 5px;
-          }
-          
-          #workspaces button.active {
-            background: #5e81ac;
-            color: #eceff4;
-            border-radius: 8px;
+            color: #9ccfd8;
+            padding: 4px 8px;
+            margin-right: 2px;
+            border-radius: 6px;
+            transition: all 150ms ease-in-out;
           }
           
           #workspaces button:hover {
-            background: #434c5e;
-            border-radius: 8px;
+            background: rgba(110, 106, 126, 0.3);
+            color: #c4a7e7;
           }
           
-          #window {
-            background: rgba(67, 76, 94, 0.5);
-            padding: 0 15px;
-            border-radius: 8px;
-            color: #a3be8c;
-          }
-          
-          #clock {
-            background: rgba(88, 166, 255, 0.1);
-            color: #8fbcbb;
-            padding: 0 20px;
-            border-radius: 8px;
+          #workspaces button.active {
+            background: rgba(235, 188, 186, 0.3);
+            color: #eb6f92;
             font-weight: bold;
           }
           
-          #battery {
-            background: rgba(235, 203, 139, 0.1);
-            color: #ebcb8b;
-            padding: 0 12px;
-            border-radius: 8px;
+          #window {
+            background: transparent;
+            color: #b4be82;
+            padding: 0 15px;
+            margin: 0;
+            flex-grow: 1;
+            text-align: center;
+            max-width: 500px;
           }
           
-          #network {
-            background: rgba(163, 190, 140, 0.1);
-            color: #a3be8c;
+          #clock {
+            background: rgba(235, 188, 186, 0.1);
+            color: #f6c177;
             padding: 0 12px;
-            border-radius: 8px;
+            margin-left: 10px;
           }
           
           #pulseaudio {
-            background: rgba(180, 142, 173, 0.1);
-            color: #b48ead;
+            background: rgba(198, 160, 240, 0.1);
+            color: #c6a0f0;
             padding: 0 12px;
-            border-radius: 8px;
+          }
+          
+          #network {
+            background: rgba(156, 207, 216, 0.1);
+            color: #9ccfd8;
+            padding: 0 12px;
           }
           
           #tray {
             background: transparent;
+            padding: 0 5px;
           }
         '';
     };
     
-    # Auto-start waybar as a systemd user service
+    # Minimal modern Hyprland config
+     xdg.configFile."hypr/hyprland.lua".text = ''
+  local h = require("hyprland")
+
+  h.monitor("HDMI-A-1", "1920x1080@60", "1920x0", 1)
+  h.monitor("DP-1", "1920x1080@165", "0x0", 1)
+
+  h.general({
+    gaps_in = 6,
+    gaps_out = 12,
+    border_size = 2,
+    ["col.active_border"] = "rgba(eb6f92ff) rgba(f6c177ff) 45deg",
+    ["col.inactive_border"] = "rgba(6e6a7eff)",
+    layout = "dwindle",
+    allow_tearing = false,
+  })
+
+  h.decoration({
+    rounding = 8,
+    blur = { enabled = true, size = 4, passes = 2 },
+    shadow = { enabled = true, range = 12, render_power = 3, color = "rgba(0000001a)" },
+  })
+
+  h.animations({
+    enabled = true,
+    bezier = { "myBezier", 0.05, 0.9, 0.1, 1.05 },
+    animation = {
+      { "windows", 1, 5, "myBezier" },
+      { "windowsOut", 1, 5, "default", "popin 80%" },
+      { "border", 1, 10, "default" },
+      { "borderangle", 1, 8, "default" },
+      { "fade", 1, 5, "default" },
+      { "workspaces", 1, 5, "default" },
+    },
+  })
+
+  h.dwindle({
+    pseudotile = true,
+    preserve_split = true,
+  })
+
+  h.input({
+    kb_layout = "us",
+    follow_mouse = 1,
+    mouse_refocus = true,
+    sensitivity = 0.0,
+  })
+
+  h.gestures({ workspace_swipe = false })
+
+  h.exec_once("waybar")
+  h.exec_once("hyprpaper")
+
+  local mod = "SUPER"
+
+  h.bind(mod, "RETURN", "exec", "kitty")
+  h.bind(mod, "Q", "killactive")
+  h.bind(mod .. "_SHIFT", "Q", "exit")
+  h.bind(mod, "V", "togglefloating")
+  h.bind(mod, "SPACE", "exec", "rofi -show drun")
+
+  h.bind(mod, "H", "movefocus", "l")
+  h.bind(mod, "J", "movefocus", "d")
+  h.bind(mod, "K", "movefocus", "u")
+  h.bind(mod, "L", "movefocus", "r")
+
+  h.bind(mod .. "_SHIFT", "H", "movewindow", "l")
+  h.bind(mod .. "_SHIFT", "J", "movewindow", "d")
+  h.bind(mod .. "_SHIFT", "K", "movewindow", "u")
+  h.bind(mod .. "_SHIFT", "L", "movewindow", "r")
+
+  for i = 1, 5 do
+    h.bind(mod, tostring(i), "workspace", tostring(i))
+    h.bind(mod .. "_SHIFT", tostring(i), "movetoworkspace", tostring(i))
+  end
+
+  h.bindm(mod, "mouse:272", "movewindow")
+  h.bindm(mod, "mouse:273", "resizewindow")
+'';  
+    # Auto-start waybar as systemd service
     systemd.user.services.waybar = {
-    Unit = {
-        Description = "Waybar status bar";
-        PartOf = [ "graphical-session.target" ];
-        After = [ "graphical-session.target" ];  
+        Unit = {
+            Description = "Waybar status bar";
+            PartOf = [ "graphical-session.target" ];
+            After = [ "graphical-session.target" ];
+        };
+        Service = {
+            Type = "simple";
+            ExecStart = "${pkgs.waybar}/bin/waybar";
+            Restart = "on-failure";
+            RestartSec = 1;
+        };
+        Install = {
+            WantedBy = [ "graphical-session.target" ];
+        };
     };
-    Service = {
-        Type = "simple";
-        ExecStart = "${pkgs.waybar}/bin/waybar";
-        Restart = "on-failure";
-        RestartSec = 1;
-    };
-    Install = {
-        WantedBy = [ "graphical-session.target" ];
-    };
-};
     
     home.packages = with pkgs; [
         vesktop
         feishin
         jetbrains-mono
+        noto-fonts
+        vimgolf
     ];
 }
