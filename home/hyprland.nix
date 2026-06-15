@@ -4,5 +4,5 @@
   };
 
   xdg.configFile."hypr/hyprland.conf".source = 
-    ./configs/hypr/hyprland.conf;
+    ./config/hypr/hyprland.lua;
 }
