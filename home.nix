@@ -10,9 +10,7 @@
             buh = "fastfetch";
             switch = "sudo nixos-rebuild switch --flake .#goti-nixOS";
         };
-        profileExtra = ''
-                exec hyprland
-        '';
+       
     }; 
     home.packages = with pkgs; [
       vesktop

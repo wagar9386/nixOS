@@ -31,6 +31,16 @@
       
   };
 
+  services.greetd = {
+    enable = true;
+
+    settings.default_session = {
+      command = "Hyprland";
+      user = "agar";
+    };
+  };
+
+
   users.users.agar = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
@@ -56,6 +66,7 @@
     bluez
     blueman
     xclip
+    neovim
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
