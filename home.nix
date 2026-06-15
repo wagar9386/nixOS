@@ -25,15 +25,22 @@
     
     programs.waybar = {
         enable = true;
-        settings = {
-            mainBar = {
+        settings = [
+            {
+                name = "mainBar";
                 layer = "top";
                 position = "top";
                 height = 30;
                 modules-left = [ "hyprland/workspaces" ];
                 modules-right = [ "clock" ];
-            };
-        };
+                "hyprland/workspaces" = {
+                    format = "{name}";
+                };
+                "clock" = {
+                    format = "{:%H:%M}";
+                };
+            }
+        ];
         style = ''
           * {
             border: none;

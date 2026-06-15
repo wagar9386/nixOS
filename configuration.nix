@@ -61,7 +61,6 @@
     vim
     wget
     kitty
-    waybar
     git
     hyprpaper
     btop
