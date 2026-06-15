@@ -53,7 +53,6 @@
     fastfetch
     rofi
     font-awesome
-    discord
     bluez
     blueman
     xclip
