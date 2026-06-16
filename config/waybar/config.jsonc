@@ -45,7 +45,7 @@
     "on-scroll-up": "playerctl next",
     "on-scroll-down": "playerctl previous",
     "on-click-right": "hyprctl dispatch exec '[float; size 300 400; move 40% 60px]' media_popup.py"
-}
+},
 
 
   "cpu": {
