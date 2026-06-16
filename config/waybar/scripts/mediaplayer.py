@@ -39,8 +39,15 @@ def init_player(name):
 manager = Playerctl.PlayerManager()
 manager.connect('name-appeared', on_player_appeared)
 
+# Near the bottom of your config/waybar/scripts/mediaplayer.py:
 for name in manager.get_property('player-names'):
     init_player(name)
+
+# --- ADD THIS QUICK FALLBACK SO IT PRINTS ON LAUNCH ---
+if not manager.get_property('players'):
+    sys.stdout.write('{"text": "󰎆 No media playing", "class": "stopped"}\n')
+    sys.stdout.flush()
+# -----------------------------------------------------
 
 loop = GLib.MainLoop()
 loop.run()

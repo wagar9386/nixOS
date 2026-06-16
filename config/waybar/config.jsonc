@@ -8,7 +8,7 @@
   "spacing": 0,
 
   "modules-left": ["hyprland/workspaces"],
-  "modules-center": ["hyprland/window"],
+  "modules-center": ["custom/media", "hyprland/window"],
   "modules-right": ["pulseaudio", "network", "cpu", "memory", "clock", "tray"],
 
   "hyprland/workspaces": {
@@ -40,11 +40,11 @@
     "format": "{}",
     "return-type": "json",
     "max-length": 45,
-    "exec": "mediaplayer.py 2> /dev/null", // Finds it via systemd path
+    "exec": "$HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null", 
     "on-click": "playerctl play-pause",
     "on-scroll-up": "playerctl next",
     "on-scroll-down": "playerctl previous",
-    "on-click-right": "hyprctl dispatch exec '[float; size 300 400; move 40% 60px]' media_popup.py"
+    "on-click-right": "hyprctl dispatch exec '[float; size 300 400; move 40% 60px]' $HOME/.config/waybar/scripts/media_popup.py"
 },
 
 

@@ -23,12 +23,8 @@ hl.monitor({
     scale    = "auto",
 })
 
-hl.config({
-    workspace = {
-        { "1", monitor = "DP-1" },
-        { "2", monitor = "HDMI-A-1" },
-    }
-})
+hl.dsp.exec_cmd("hyprctl dispatch moveworkspacetomonitor 1 DP-1")
+hl.dsp.exec_cmd("hyprctl dispatch moveworkspacetomonitor 2 HDMI-A-1")
 ---------------------
 ---- MY PROGRAMS ----
 ---------------------
@@ -87,7 +83,7 @@ hl.config({
         rounding_power = 2,
  
         active_opacity   = 1.0,
-        inactive_opacity = 0.95,
+        inactive_opacity = 0.69,
  
         shadow = {
             enabled      = true,

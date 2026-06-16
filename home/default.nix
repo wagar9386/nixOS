@@ -34,5 +34,6 @@
         jetbrains-mono
         noto-fonts
         vimgolf
+        nerd-fonts.jetbrains-mono
     ];
 }

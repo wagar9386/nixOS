@@ -78,6 +78,7 @@
     xclip
     neovim
     home-manager
+    python3
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

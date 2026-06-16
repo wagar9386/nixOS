@@ -130,7 +130,6 @@ window#waybar {
 #custom-media:hover {
   color: #fabd2f;
   background: rgba(80, 73, 69, 0.8);
-  cursor: pointer;
 }
 
 /* If the player status is paused, turn the module text muted gray */
