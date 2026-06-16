@@ -32,7 +32,6 @@ def listen_to_player():
             
             track_info = {
                 "text": f"󰎆 {safe_artist} - {safe_title}",
-                "tooltip": f"Song: {safe_title}\nArtist: {safe_artist}\nClick to View Album Art and Controls",
                 "class": status,
                 "alt": art.replace("file://", "") if art.startswith("file://") else art
             }
