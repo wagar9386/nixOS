@@ -37,6 +37,7 @@
         vimgolf
         nerd-fonts.jetbrains-mono
         capitaine-cursors-themed
+        stremio-linux-shell
     ];
     home.pointerCursor = {
     package = pkgs.capitaine-cursors-themed;
