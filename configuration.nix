@@ -33,7 +33,7 @@
     enable = true;
 
     settings.default_session = {
-      command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd Hyprland";
+      command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd 'start-hyprland & systemctl --user start graphical-session.target'";
       user = "agar";
     };
   };
