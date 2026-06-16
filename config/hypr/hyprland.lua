@@ -37,9 +37,8 @@ local menu        = "rofi -show drun"
 -------------------
  
 hl.on("hyprland.start", function()
-  hl.dsp.exec_cmd("waybar")
-  hl.dsp.exec_cmd("hyprpaper")
-end) 
+  hl.exec_cmd("systemctl --user start graphical-session.target")
+end)
  
 -------------------------------
 ---- ENVIRONMENT VARIABLES ----
