@@ -41,7 +41,9 @@ local menu        = "rofi -show drun"
 hl.on("hyprland.start", function()
   hl.exec_cmd("systemctl --user start graphical-session.target")
 end)
- 
+exec-once = [workspace 2 silent] firefox
+exec-once = [workspace 1 silent] vesktop
+exec-once = [workspace 3 silent] feishin
 -------------------------------
 ---- ENVIRONMENT VARIABLES ----
 -------------------------------
