@@ -63,8 +63,8 @@ hl.env("HYPRCURSOR_SIZE", "19")
  
 hl.config({
     general = {
-        gaps_in  = 6,
-        gaps_out = 16,
+        gaps_in  = 3,
+        gaps_out = 13,
         border_size = 2,
         col = {
             active_border   = { colors = {"rgba(fabd2fff)", "rgba(fb9914ff)"}, angle = 45 },
@@ -76,8 +76,8 @@ hl.config({
     },
 
     cursor = {
-        no_hardware_cursors = false,
-        inactive_timeout = 3,
+        no_hardware_cursors = true,
+        inactive_timeout = 0.9386,
     },
 
     decoration = {
