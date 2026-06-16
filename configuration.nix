@@ -31,10 +31,9 @@
 
   services.greetd = {
     enable = true;
-
     settings.default_session = {
-      command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd 'start-hyprland & systemctl --user start graphical-session.target'";
-      user = "agar";
+        command = "${pkgs.tuigreet}/bin/tuigreet --cmd 'uwsm start -- hyprland.desktop'";
+        user = "agar";
     };
   };
 
@@ -46,6 +45,14 @@
     ];
   };
 
+  programs.uwsm = {
+      enable = true;
+      waylandCompositors.hyprland = {
+          prettyName = "Hyprland";
+          comment = "Hyprland compositor managed by UWSM";
+          binPath = "/run/current-system/sw/bin/Hyprland";
+      };
+  };
 
   users.users.agar = {
     isNormalUser = true;
