@@ -1,81 +1,53 @@
 #!/usr/bin/env python3
+import subprocess
 import json
-import os
 import sys
-import gi
-gi.require_version('Playerctl', '2.0')
-from gi.repository import Playerctl, GLib
+import time
 
-def print_current_track(player):
-    try:
-        metadata = player.props.metadata
-        if not metadata:
-            return
-            
-        title = metadata.get('xesam:title') or metadata.get('string:title') or "Unknown Title"
-        artist_data = metadata.get('xesam:artist') or metadata.get('string:artist') or "Unknown Artist"
-        
-        if isinstance(artist_data, list):
-            artist = ", ".join(artist_data)
-        else:
-            artist = artist_data
-            
-        art_url = metadata.get('mpris:artUrl') or metadata.get('string:mpris:artUrl') or ""
-        cover_path = art_url.replace('file://', '') if art_url.startswith('file://') else art_url
-
-        track_info = {
-            'text': f"󰎆 {artist} - {title}",
-            'tooltip': f"Song: {title}\nArtist: {artist}\nClick to View Album Art & Controls",
-            'class': player.get_property('playback-status').value_name.lower(),
-            'alt': cover_path
-        }
-        
-        sys.stdout.write(json.dumps(track_info) + '\n')
-        sys.stdout.flush()
-    except Exception as e:
-        # Debug fallback to prevent silent loops
-        sys.stderr.write(f"Error reading track data: {str(e)}\n")
-
-def on_metadata(player, metadata):
-    print_current_track(player)
-
-def on_playback_status(player, status):
-    print_current_track(player)
-
-def on_player_vanished(manager, name):
-    sys.stdout.write('{"text": "", "class": "stopped"}\n')
-    sys.stdout.flush()
-
-def init_player(player):
-    player.connect('metadata', on_metadata)
-    player.connect('playback-status', on_playback_status)
-    print_current_track(player)
-
-def on_player_appeared(manager, name):
-    player = Playerctl.Player.new_from_name(name)
-    init_player(player)
-
-manager = Playerctl.PlayerManager()
-manager.connect('name-appeared', on_player_appeared)
-manager.connect('player-vanished', on_player_vanished)
-
-# --- FORCE EXPLICIT INITIALIZATION FOR FEISHIN ---
-try:
-    # 1. First see if playerctl can find any active players globally
-    players = manager.props.players
+def listen_to_player():
+    # Tell playerctl to dump raw metadata as a simple JSON string and follow it continuously
+    cmd = [
+        "playerctl", "metadata",
+        "--format", '{"title": "{{title}}", "artist": "{{artist}}", "status": "{{status}}", "art": "{{mpris:artUrl}}"}',
+        "--follow"
+    ]
     
-    # 2. If it returns empty, force create an explicit instance for Feishin
-    if not players:
-        feishin_player = Playerctl.Player.new_from_name('Feishin')
-        players = [feishin_player]
-        
-    for player in players:
-        init_player(player)
-        
-except Exception:
-    sys.stdout.write('{"text": "󰎆 No media playing", "class": "stopped"}\n')
-    sys.stdout.flush()
-# -------------------------------------------------
+    # Spawn the process
+    proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, text=True)
+    
+    # Stream lines instantly as playerctl emits them
+    for line in proc.stdout:
+        try:
+            raw = json.loads(line.strip())
+            
+            title = raw.get("title") or "Unknown Title"
+            artist = raw.get("artist") or "Unknown Artist"
+            status = (raw.get("status") or "playing").lower()
+            art = raw.get("art") or ""
+            
+            # Format the exact structure your Waybar JSON config expects
+            track_info = {
+                "text": f"󰎆 {artist} - {title}",
+                "tooltip": f"Song: {title}\nArtist: {artist}\nClick to View Album Art & Controls",
+                "class": status,
+                "alt": art.replace("file://", "") if art.startswith("file://") else art
+            }
+            
+            sys.stdout.write(json.dumps(track_info) + '\n')
+            sys.stdout.flush()
+        except Exception:
+            continue
 
-loop = GLib.MainLoop()
-loop.run()
+while True:
+    # Check if any media player session is running right now
+    check = subprocess.run(["playerctl", "status"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    
+    if check.returncode != 0 or "No players found" in check.stderr:
+        # Clear the bar and print the idle state if nothing is active
+        sys.stdout.write('{"text": "󰎆 No media playing", "class": "stopped"}\n')
+        sys.stdout.flush()
+        time.sleep(2) # Polling throttle while inactive
+    else:
+        # A player exists! Hook directly into the live data stream
+        listen_to_player()
+        time.sleep(1)
