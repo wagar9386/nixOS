@@ -116,5 +116,25 @@ window#waybar {
   -gtk-icon-effect: highlight;
   background-color: rgba(251, 73, 24, 0.4);
 }
- 
+
+#custom-media {
+  color: #b8bb26; /* Gruvbox Green for music */
+  background: rgba(60, 56, 54, 0.6);
+  padding: 0 14px;
+  margin: 5px 3px;
+  border-radius: 8px;
+  transition: all 200ms ease-in-out;
+}
+
+/* Subtle gold accent text color on hover to prompt clicking */
+#custom-media:hover {
+  color: #fabd2f;
+  background: rgba(80, 73, 69, 0.8);
+  cursor: pointer;
+}
+
+/* If the player status is paused, turn the module text muted gray */
+#custom-media.paused {
+  color: #928374;
+}
 

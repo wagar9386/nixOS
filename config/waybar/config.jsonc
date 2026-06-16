@@ -36,37 +36,55 @@
     }
   },
 
-  "clock": {
-    "format": " {:%H:%M}",
-    "format-alt": " {:%A, %d %B %Y}",
-    "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>"
-  },
+"custom/media": {
+    "format": "{}",
+    "return-type": "json",
+    "max-length": 45,
+    "exec": "mediaplayer.py 2> /dev/null", // Finds it via systemd path
+    "on-click": "playerctl play-pause",
+    "on-scroll-up": "playerctl next",
+    "on-scroll-down": "playerctl previous",
+    "on-click-right": "hyprctl dispatch exec '[float; size 300 400; move 40% 60px]' media_popup.py"
+}
+
 
   "cpu": {
-    "format": " {usage}%",
+    "format": " {usage}%", // Added CPU icon
     "interval": 5
   },
 
   "memory": {
-    "format": " {percentage}%",
+    "format": " {percentage}%", // Added RAM icon
     "interval": 5
   },
 
   "pulseaudio": {
     "format": "{icon} {volume}%",
-    "format-muted": " muted",
+    "format-muted": "  muted", // Added muted icon
     "format-icons": {
-      "default": ["", "", ""]
+      "headphone": " ",
+      "hands-free": " ",
+      "headset": " ",
+      "phone": " ",
+      "portable": " ",
+      "car": " ",
+      "default": [" ", " ", " "] // Added tiered volume icons
     },
     "scroll-step": 5,
     "on-click": "pavucontrol"
   },
 
   "network": {
-    "format-wifi": " {essid}",
-    "format-ethernet": " wired",
-    "format-disconnected": " offline",
+    "format-wifi": "  {essid}", // Added WiFi icon
+    "format-ethernet": "󰈀  wired", // Added Ethernet icon
+    "format-disconnected": "󰖪  offline", // Added disconnected icon
     "tooltip-format": "{ifname}: {ipaddr}/{cidr}, signal {signalStrength}%"
+  },
+
+  "clock": {
+    "format": "  {:%H:%M}", // Added Clock icon
+    "format-alt": "  {:%A, %d %B %Y}", // Added Calendar icon
+    "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>"
   },
 
   "tray": {
