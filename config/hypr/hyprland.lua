@@ -36,8 +36,10 @@ local menu        = "rofi -show drun"
 ---- AUTOSTART ----
 -------------------
  
-hl.dsp.exec_cmd("waybar")
- 
+hl.on("hyprland.start", function()
+  hl.dsp.exec_cmd("waybar")
+  hl.dsp.exec_cmd("hyprpaper")
+end) 
  
 -------------------------------
 ---- ENVIRONMENT VARIABLES ----
