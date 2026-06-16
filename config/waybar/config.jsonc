@@ -8,8 +8,8 @@
   "spacing": 0,
 
   "modules-left": ["hyprland/workspaces"],
-  "modules-center": ["custom/media", "hyprland/window"],
-  "modules-right": ["pulseaudio", "network", "cpu", "memory", "clock", "tray"],
+  "modules-center": ["hyprland/window"],
+  "modules-right": ["custom/media", "pulseaudio", "network", "cpu", "memory", "clock", "tray"],
 
   "hyprland/workspaces": {
     "format": "{icon}",
@@ -36,31 +36,30 @@
     }
   },
 
-"custom/media": {
+  "custom/media": {
     "format": "{}",
     "return-type": "json",
     "max-length": 45,
-    "exec": "$HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null", 
+    "exec": "placeholder", 
     "on-click": "playerctl play-pause",
     "on-scroll-up": "playerctl next",
     "on-scroll-down": "playerctl previous",
     "on-click-right": "hyprctl dispatch exec '[float; size 300 400; move 40% 60px]' $HOME/.config/waybar/scripts/media_popup.py"
-},
-
+  },
 
   "cpu": {
-    "format": " {usage}%", // Added CPU icon
+    "format": " {usage}%",
     "interval": 5
   },
 
   "memory": {
-    "format": " {percentage}%", // Added RAM icon
+    "format": " {percentage}%",
     "interval": 5
   },
 
   "pulseaudio": {
     "format": "{icon} {volume}%",
-    "format-muted": "  muted", // Added muted icon
+    "format-muted": "  muted",
     "format-icons": {
       "headphone": " ",
       "hands-free": " ",
@@ -68,22 +67,22 @@
       "phone": " ",
       "portable": " ",
       "car": " ",
-      "default": [" ", " ", " "] // Added tiered volume icons
+      "default": [" ", " ", " "]
     },
     "scroll-step": 5,
     "on-click": "pavucontrol"
   },
 
   "network": {
-    "format-wifi": "  {essid}", // Added WiFi icon
-    "format-ethernet": "󰈀  wired", // Added Ethernet icon
-    "format-disconnected": "󰖪  offline", // Added disconnected icon
+    "format-wifi": "  {essid}",
+    "format-ethernet": "󰈀  wired",
+    "format-disconnected": "󰖪  offline",
     "tooltip-format": "{ifname}: {ipaddr}/{cidr}, signal {signalStrength}%"
   },
 
   "clock": {
-    "format": "  {:%H:%M}", // Added Clock icon
-    "format-alt": "  {:%A, %d %B %Y}", // Added Calendar icon
+    "format": "  {:%H:%M}",
+    "format-alt": "  {:%A, %d %B %Y}",
     "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>"
   },
 
