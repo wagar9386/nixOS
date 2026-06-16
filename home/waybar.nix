@@ -1,11 +1,8 @@
-{
-   programs.waybar = {
-     enable = true;
-   };
+{ config, pkgs, ... }:
 
-   xdg.configFile."waybar/config".source = 
-     ./config/waybar/config.jsonc;
-  
-    xdg.configFile."waybar/style.css".source = 
-     ./config/waybar/style.css;
+{
+    programs.waybar.enable = true;
+
+    xdg.configFile."waybar/config.jsonc".source = ../config/waybar/config.jsonc;
+    xdg.configFile."waybar/style.css".source = ../config/waybar/style.css;
 }

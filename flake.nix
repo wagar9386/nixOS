@@ -23,7 +23,7 @@
                     home-manager = {
                         useGlobalPkgs = true; 
                         useUserPackages = true;
-                        users.agar = import ./home.nix;
+                        users.agar = import ./home/default.nix;
                     };
                 }
             ];

@@ -1,8 +1,5 @@
-{
-  wayland.windowManager.hyprland = {
-    enable = true;
-  };
+{ config, pkgs, ... }:
 
-  xdg.configFile."hypr/hyprland.conf".source = 
-    ./config/hypr/hyprland.lua;
+{
+    xdg.configFile."hypr/hyprland.lua".source = ../config/hypr/hyprland.lua;
 }
