@@ -35,5 +35,13 @@
         noto-fonts
         vimgolf
         nerd-fonts.jetbrains-mono
+        capitaine-cursors-themed
     ];
+    home.pointerCursor = {
+    package = pkgs.capitaine-cursors-themed;
+    name = "capitaine-cursors-gruvbox";
+    size = 24;
+    gtk.enable = true;
+    x11.enable = true;
+    };
 }
