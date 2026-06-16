@@ -22,7 +22,13 @@ hl.monitor({
     position = "1920x0",
     scale    = "auto",
 })
- 
+
+hl.config({
+    workspace = {
+        { "1", monitor = "DP-1" },
+        { "2", monitor = "HDMI-A-1" },
+    }
+})
 ---------------------
 ---- MY PROGRAMS ----
 ---------------------
