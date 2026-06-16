@@ -47,9 +47,9 @@ end)
 -------------------------------
  
 hl.env("XCURSOR_THEME", "Capitaine Cursors (Gruvbox)")
-hl.env("XCURSOR_SIZE", "24")
+hl.env("XCURSOR_SIZE", "19")
 hl.env("HYPRCURSOR_THEME", "Capitaine Cursors (Gruvbox)")
-hl.env("HYPRCURSOR_SIZE", "24")
+hl.env("HYPRCURSOR_SIZE", "19")
  
 -----------------------
 ---- LOOK AND FEEL ----
@@ -65,34 +65,35 @@ hl.config({
     general = {
         gaps_in  = 6,
         gaps_out = 16,
- 
         border_size = 2,
- 
         col = {
-            active_border   = { colors = {"rgba(fe8019ee)", "rgba(fabd2fee)"}, angle = 45 },
+            active_border   = { colors = {"rgba(fabd2fff)", "rgba(fb9914ff)"}, angle = 45 },
             inactive_border = "rgba(3c3836aa)",
         },
- 
         resize_on_border = false,
         allow_tearing = false,
- 
         layout = "dwindle",
     },
- 
+
+    cursor = {
+        no_hardware_cursors = false,
+        inactive_timeout = 3,
+    },
+
     decoration = {
-        rounding       = 10,
+        rounding       = 9,
         rounding_power = 2,
- 
+
         active_opacity   = 1.0,
-        inactive_opacity = 0.86,
- 
+        inactive_opacity = 0.88,
+
         shadow = {
             enabled      = true,
             range        = 14,
             render_power = 3,
             color        = 0xcc1d2021,
         },
- 
+
         blur = {
             enabled   = true,
             size      = 4,
@@ -100,7 +101,7 @@ hl.config({
             vibrancy  = 0.1696,
         },
     },
- 
+
     animations = {
         enabled = true,
     },
