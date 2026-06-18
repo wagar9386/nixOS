@@ -40,6 +40,7 @@
         capitaine-cursors-themed
         stremio-linux-shell
         steam
+        pkgs.prismlauncher
     ];
     home.pointerCursor = {
     package = pkgs.capitaine-cursors-themed;
