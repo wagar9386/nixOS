@@ -38,6 +38,7 @@
         nerd-fonts.jetbrains-mono
         capitaine-cursors-themed
         stremio-linux-shell
+        steam
     ];
     home.pointerCursor = {
     package = pkgs.capitaine-cursors-themed;
