@@ -17,8 +17,7 @@
             buh = "fastfetch";
         };
         initExtra = ''
-          PS1='\[\e[38;2;211;134;155m\]waga\[\e[0m\](\[\e[38;2;142;192;124m\]\W\[\e[0m\])\[\e[38;2;211;134;155m\]\$\[\e[0m\] '    
-  
+            PS1='\[\e[38;2;211;134;155m\]waga\[\e[0m\](\[\e[38;2;131;165;152m\]\W\[\e[0m\])\[\e[38;2;211;134;155m\]\$\[\e[0m\] ' 
           switch() {
             cd /home/agar/nixos-dotfiles && sudo nixos-rebuild switch --flake .#goti-nixOS
           }
