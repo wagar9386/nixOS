@@ -17,6 +17,8 @@
             buh = "fastfetch";
         };
         initExtra = ''
+          PS1='waga(\W)\$ '        
+  
           switch() {
             cd /home/agar/nixos-dotfiles && sudo nixos-rebuild switch --flake .#goti-nixOS
           }
