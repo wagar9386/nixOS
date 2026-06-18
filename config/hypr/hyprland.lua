@@ -50,9 +50,12 @@ hl.dsp.exec_cmd("[workspace 3 silent] feishin")
 -------------------------------
  
 hl.env("XCURSOR_THEME", "Capitaine Cursors (Gruvbox)")
-hl.env("XCURSOR_SIZE", "19")
+hl.env("XCURSOR_SIZE", "16")
 hl.env("HYPRCURSOR_THEME", "Capitaine Cursors (Gruvbox)")
-hl.env("HYPRCURSOR_SIZE", "19")
+hl.env("HYPRCURSOR_SIZE", "16")
+hl.env("LIBVA_DRIVER_NAME", "nvidia")
+hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
+hl.env("NVD_BACKEND", "direct")
  
 -----------------------
 ---- LOOK AND FEEL ----
