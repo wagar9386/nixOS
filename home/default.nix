@@ -43,6 +43,7 @@
         pkgs.prismlauncher
         pkgs.retroarch
         hyprshot
+        exiftool
     ];
     home.pointerCursor = {
     package = pkgs.capitaine-cursors-themed;
