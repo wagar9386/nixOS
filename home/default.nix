@@ -41,6 +41,8 @@
         stremio-linux-shell
         steam
         pkgs.prismlauncher
+        pkgs.retroarch
+        hyprshot
     ];
     home.pointerCursor = {
     package = pkgs.capitaine-cursors-themed;
