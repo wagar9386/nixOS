@@ -43,11 +43,9 @@
         pkgs.prismlauncher
         hyprshot
         exiftool
-        (pkgs.retroarch.override {
-           cores = with pkgs.libretro; [
-               mupen64plus
-           ];
-        })
+        (pkgs.retroarch.withCores (cores: with cores; [
+            mupen64plus
+        ]))
     ];
     home.pointerCursor = {
     package = pkgs.capitaine-cursors-themed;
