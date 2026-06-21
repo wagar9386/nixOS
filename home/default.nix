@@ -41,9 +41,13 @@
         stremio-linux-shell
         steam
         pkgs.prismlauncher
-        pkgs.retroarch
         hyprshot
         exiftool
+        (pkgs.retroarch.override {
+           cores = with pkgs.libretro; [
+               mupen64plus
+           ];
+        })
     ];
     home.pointerCursor = {
     package = pkgs.capitaine-cursors-themed;
