@@ -5,7 +5,6 @@
         ./hyprland.nix
         ./waybar.nix
         ./kitty.nix
-        ./flameshot.nix
     ];
 
     home.username = "agar";
@@ -45,6 +44,7 @@
         pkgs.flameshot
         pkgs.grim
         pkgs.slurp
+        pkgs.swappy
         exiftool
         (pkgs.retroarch.withCores (cores: with cores; [
             mupen64plus
