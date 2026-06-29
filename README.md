@@ -7,7 +7,6 @@
 
 ## Info
 | | |
-|---|---|
 | **OS** | NixOS unstable |
 | **WM** | Hyprland |
 | **Terminal** | Kitty |
