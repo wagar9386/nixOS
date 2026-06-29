@@ -5,6 +5,7 @@
         ./hyprland.nix
         ./waybar.nix
         ./kitty.nix
+        ./flameshot.ini
     ];
 
     home.username = "agar";
@@ -42,6 +43,8 @@
         steam
         pkgs.prismlauncher
         pkgs.flameshot
+        pkgs.grim
+        pkgs.slurp
         exiftool
         (pkgs.retroarch.withCores (cores: with cores; [
             mupen64plus
