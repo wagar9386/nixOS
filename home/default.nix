@@ -41,7 +41,7 @@
         stremio-linux-shell
         steam
         pkgs.prismlauncher
-        hyprshot
+        pkgs.flamehot
         exiftool
         (pkgs.retroarch.withCores (cores: with cores; [
             mupen64plus
