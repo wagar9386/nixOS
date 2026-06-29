@@ -1,7 +1,7 @@
 # ❄️ goti-nixOS dotfiles
 *My NixOS configuration with Hyprland, Gruvbox, and a modular Home Manager setup. Feel free to look around and steal anything useful!*
 
-> ⚠️ **Do NOT copy `hardware-configuration.nix`** — it's specific to my drives and will break your system.
+
 
 ![Desktop screenshot](assets/screenshot.png)
 
@@ -65,7 +65,7 @@ switch
 
 ## Installation
 Prerequisites: NixOS installed, flakes enabled.
-
+> ⚠️ **Do NOT copy `hardware-configuration.nix`** — it's specific to my drives and will break your system.
 ```bash
 git clone https://github.com/wagar9386/nixOS ~/nixos-dotfiles
 cd ~/nixos-dotfiles
