@@ -6,7 +6,7 @@
 ![Desktop screenshot](assets/screenshot.png)
 
 ## Info
-| | |
+|---|---|
 | **OS** | NixOS unstable |
 | **WM** | Hyprland |
 | **Terminal** | Kitty |
