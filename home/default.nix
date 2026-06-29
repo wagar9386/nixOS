@@ -5,7 +5,7 @@
         ./hyprland.nix
         ./waybar.nix
         ./kitty.nix
-        ./flameshot.ini
+        ./flameshot.nix
     ];
 
     home.username = "agar";

@@ -1,4 +1,8 @@
-xdg.configFile."flameshot/flameshot.ini".text = ''
-  [General]
-  useGrimAdapter=true
-'';
+{ config, pkgs, ... }:
+
+{
+    xdg.configFile."flameshot/flameshot.ini".text = ''
+        [General]
+        useGrimAdapter=true
+    '';
+}
