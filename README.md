@@ -1,4 +1,4 @@
-# ❄️ goti-nixOS dotfiles
+# ❄️ My nixOS dotfiles
 *My NixOS configuration with Hyprland, Gruvbox, and a modular Home Manager setup. Feel free to look around and steal anything useful!*
 
 
@@ -9,7 +9,7 @@
 | | |
 |---|---|
 | **OS** | NixOS unstable |
-| **WM** | Hyprland (Lua config) |
+| **WM** | Hyprland |
 | **Terminal** | Kitty |
 | **Shell** | Bash |
 | **Bar** | Waybar |
@@ -17,7 +17,7 @@
 | **Theme** | Gruvbox Dark |
 | **Font** | JetBrainsMono Nerd Font |
 | **Browser** | Firefox |
-| **Editor** | Neovim |
+| **Editor** | Vim |
 
 ## Structure
 ```
