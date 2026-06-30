@@ -78,6 +78,6 @@
     "interval": 5,
     "exec": "bash -lc 'if command -v blueman-manager >/dev/null 2>&1; then echo \"\"; else echo \"\"; fi'",
     "on-click": "bash -lc 'blueman-manager'"
-  }
-    }
+     }
 }
+
