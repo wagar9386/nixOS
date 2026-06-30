@@ -52,8 +52,6 @@
     "format-muted": "  muted",
     "format-icons": {
       "headphone": " ",
-      "hands-free": " ",
-      "headset": " ",
       "phone": " ",
       "portable": " ",
       "car": " ",
@@ -64,10 +62,12 @@
   },
 
   "network": {
-    "format-wifi": "  {essid}",
-    "format-ethernet": "󰈀  wired",
-    "format-disconnected": "󰖪  offline",
-    "tooltip-format": "{ifname}: {ipaddr}/{cidr}, signal {signalStrength}%"
+  "interface": "enp*",
+  "format": "󰈀  {bandwidthDownBytes}↓ {bandwidthUpBytes}↑",
+  "format-ethernet": "󰈀  {ifname}",
+  "format-disconnected": "󰖪  offline",
+  "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
+  "interval": 2
   },
 
   "clock": {
