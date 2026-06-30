@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-    programs.rofi.enable = true;
+    home.packages = [ pkgs.rofi ];
 
     xdg.configFile."rofi/config.rasi".source = ../config/rofi/config.rasi;
 }
