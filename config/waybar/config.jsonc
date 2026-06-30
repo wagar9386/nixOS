@@ -9,7 +9,7 @@
 
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["custom/media"],
-  "modules-right": ["pulseaudio", "network", "cpu", "memory", "clock", "tray"],
+  "modules-right": ["pulseaudio", "network", "cpu", "memory", "clock", "bluetooth"],
 
   "hyprland/workspaces": {
     "format": "{icon}",
@@ -73,12 +73,11 @@
     "format-alt": "  {:%A, %d %B %Y}",
     "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>"
   },
-
-  "tray": {
-    "icon-size": 16,
-    "spacing": 10,
-    "icons": {
-    "blueman": "bluetooth"
-    }
+   "bluetooth": {
+    "format": " {}",
+    "interval": 5,
+    "exec": "bash -lc 'if command -v blueman-manager >/dev/null 2>&1; then echo \"\"; else echo \"\"; fi'",
+    "on-click": "bash -lc 'blueman-manager'"
   }
+    }
 }
