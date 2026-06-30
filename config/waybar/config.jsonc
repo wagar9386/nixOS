@@ -63,12 +63,9 @@
 
   "network": {
   "interface": "enp*",
-  "format": "󰈀  {bandwidthDownBytes}↓ {bandwidthUpBytes}↑",
-  "format-ethernet": "󰈀  {ifname}",
-  "format-disconnected": "󰖪  offline",
-  "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
-  "interval": 2
-  },
+  "format-ethernet": "󰈀  {ipaddr}",
+  "format-disconnected": "󰖪  offline"
+   },
 
   "clock": {
     "format": "  {:%H:%M}",
