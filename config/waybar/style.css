@@ -145,8 +145,8 @@ window#waybar {
 #tray .bluetooth {
   background: rgba(60, 56, 54, 0.6);
   color: #83a598; /* Gruvbox blue-green */
-  padding: 0 99px;
-  margin: 0px 8px;
+  padding: 0 14px;
+  margin: 0px 99px;
   border-radius: 8px;
 }
 
