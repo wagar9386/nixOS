@@ -31,7 +31,7 @@ hl.dsp.exec_cmd("hyprctl dispatch moveworkspacetomonitor 2 HDMI-A-1")
  
 local terminal    = "kitty"
 local fileManager = "dolphin"
-local menu        = "rofi -show drun"
+local menu        = "rofi -show drun -config ~/.config/rofi/config.rasi"
  
  
 -------------------
