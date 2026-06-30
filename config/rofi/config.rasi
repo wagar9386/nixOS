@@ -1,13 +1,10 @@
-/* Gruvbox Dark Rofi - fully opaque + correct drun styling */
+/* Gruvbox Dark — rofi theme */
 
 * {
     bg0:      #282828;
     bg1:      #3c3836;
     bg2:      #504945;
-
     fg:       #ebdbb2;
-    gray:     #928374;
-
     red:      #fb4934;
     green:    #b8bb26;
     yellow:   #fabd2f;
@@ -15,107 +12,87 @@
     purple:   #d3869b;
     aqua:     #8ec07c;
     orange:   #fe8019;
+    gray:     #928374;
 
-    background-color: @bg0;
-    text-color: @fg;
-    font: "JetBrainsMono Nerd Font 12";
+    background-color: transparent;
+    text-color:       @fg;
+    font:              "JetBrainsMono Nerd Font 12";
 }
 
 window {
-    width: 680px;
     background-color: @bg0;
-    border: 2px;
-    border-color: @bg2;
-    border-radius: 12px;
+    border:            2px;
+    border-color:      @orange;
+    border-radius:     12px;
+    width:              520px;
+    padding:            0px;
 }
 
 mainbox {
-    background-color: @bg0;
-    padding: 14px;
-    spacing: 10px;
+    background-color: transparent;
+    padding:            12px;
+    spacing:            10px;
 }
 
-/* SEARCH BAR */
 inputbar {
     background-color: @bg1;
-    padding: 10px 14px;
-    spacing: 10px;
-    children: [ "prompt", "entry" ];
-    border-radius: 8px;
+    border-radius:      8px;
+    padding:             10px 14px;
+    spacing:             8px;
+    children:            [ "prompt", "entry" ];
 }
 
 prompt {
     text-color: @orange;
+    font:        "JetBrainsMono Nerd Font Bold 12";
 }
 
 entry {
-    background-color: @bg1;
-    text-color: @fg;
-    placeholder: "Search...";
+    placeholder:       "Search…";
     placeholder-color: @gray;
+    text-color:        @fg;
 }
 
-/* LIST AREA */
 listview {
-    background-color: @bg0;
-    spacing: 6px;
-    columns: 1;
-    lines: 8;
+    background-color:  transparent;
+    columns:             1;
+    lines:               8;
+    spacing:             4px;
+    cycle:               true;
+    dynamic:             true;
+    scrollbar:           false;
 }
 
-/* IMPORTANT: THIS FIXES WHITE ITEMS */
 element {
-    background-color: @bg1;
-    text-color: @fg;
-    border-radius: 8px;
-    padding: 10px 14px;
-}
-
-/* fixes drun weird highlight/mark behavior */
-element normal.normal {
-    background-color: @bg1;
-    text-color: @fg;
-}
-
-element normal.urgent {
-    background-color: @bg1;
-    text-color: @red;
-}
-
-element normal.active {
-    background-color: @bg1;
-    text-color: @green;
-}
-
-element selected.normal {
-    background-color: @bg2;
-    text-color: @yellow;
-}
-
-element selected.urgent {
-    background-color: @bg2;
-    text-color: @red;
-}
-
-element selected.active {
-    background-color: @bg2;
-    text-color: @green;
-}
-
-/* ICON + TEXT (this is what stops “white bug”) */
-element-icon {
     background-color: transparent;
-    size: 24px;
+    text-color:         @fg;
+    border-radius:       8px;
+    padding:             8px 12px;
+    spacing:             10px;
+    orientation:         horizontal;
+}
+
+element selected {
+    background-color: @bg2;
+    text-color:         @yellow;
+}
+
+element-icon {
+    size:      24px;
+    vertical-align: 0.5;
 }
 
 element-text {
-    background-color: @bg1;
-    text-color: inherit;
+    vertical-align: 0.5;
 }
 
-/* MESSAGE BOX */
 message {
     background-color: @bg1;
-    border-radius: 8px;
-    padding: 10px 14px;
+    border-radius:       8px;
+    padding:             8px 12px;
 }
+
+textbox {
+    text-color: @gray;
+}
+
