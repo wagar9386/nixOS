@@ -1,4 +1,4 @@
-/* Gruvbox Dark - Rofi (Waybar matching, opaque) */
+/* Gruvbox Dark Rofi - fully opaque + correct drun styling */
 
 * {
     bg0:      #282828;
@@ -21,91 +21,101 @@
     font: "JetBrainsMono Nerd Font 12";
 }
 
-/* Main window */
 window {
-    width: 660px;
+    width: 680px;
     background-color: @bg0;
     border: 2px;
     border-color: @bg2;
     border-radius: 12px;
-    padding: 0px;
 }
 
-/* Layout container */
 mainbox {
     background-color: @bg0;
     padding: 14px;
-    spacing: 12px;
+    spacing: 10px;
 }
 
-/* Search bar container */
+/* SEARCH BAR */
 inputbar {
     background-color: @bg1;
-    border-radius: 8px;
     padding: 10px 14px;
     spacing: 10px;
     children: [ "prompt", "entry" ];
+    border-radius: 8px;
 }
 
-/* Prompt (left symbol) */
 prompt {
     text-color: @orange;
-    font: "JetBrainsMono Nerd Font Bold 12";
 }
 
-/* Input text */
 entry {
-    text-color: @fg;
     background-color: @bg1;
+    text-color: @fg;
     placeholder: "Search...";
     placeholder-color: @gray;
 }
 
-/* List */
+/* LIST AREA */
 listview {
     background-color: @bg0;
+    spacing: 6px;
     columns: 1;
     lines: 8;
-    spacing: 6px;
-    cycle: true;
-    dynamic: true;
-    scrollbar: false;
 }
 
-/* Each entry */
+/* IMPORTANT: THIS FIXES WHITE ITEMS */
 element {
     background-color: @bg1;
     text-color: @fg;
     border-radius: 8px;
     padding: 10px 14px;
-    spacing: 10px;
 }
 
-/* Selected entry */
-element selected {
+/* fixes drun weird highlight/mark behavior */
+element normal.normal {
+    background-color: @bg1;
+    text-color: @fg;
+}
+
+element normal.urgent {
+    background-color: @bg1;
+    text-color: @red;
+}
+
+element normal.active {
+    background-color: @bg1;
+    text-color: @green;
+}
+
+element selected.normal {
     background-color: @bg2;
     text-color: @yellow;
 }
 
-/* Icons */
+element selected.urgent {
+    background-color: @bg2;
+    text-color: @red;
+}
+
+element selected.active {
+    background-color: @bg2;
+    text-color: @green;
+}
+
+/* ICON + TEXT (this is what stops “white bug”) */
 element-icon {
+    background-color: transparent;
     size: 24px;
-    vertical-align: 0.5;
 }
 
-/* Text alignment */
 element-text {
-    vertical-align: 0.5;
+    background-color: @bg1;
+    text-color: inherit;
 }
 
-/* Messages (no results, etc.) */
+/* MESSAGE BOX */
 message {
     background-color: @bg1;
     border-radius: 8px;
     padding: 10px 14px;
-}
-
-/* Help / small text */
-textbox {
-    text-color: @gray;
 }
