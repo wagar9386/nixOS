@@ -1,2 +1,97 @@
+/* Gruvbox Dark — rofi theme */
 
-@theme "/nix/store/f6jj0h6nn40cv8hq7ksgikx04vayxjlw-rofi-2.0.0/share/rofi/themes/gruvbox-dark.rasi"
+* {
+    bg0:      #282828;
+    bg1:      #3c3836;
+    bg2:      #504945;
+    fg:       #ebdbb2;
+    red:      #fb4934;
+    green:    #b8bb26;
+    yellow:   #fabd2f;
+    blue:     #83a598;
+    purple:   #d3869b;
+    aqua:     #8ec07c;
+    orange:   #fe8019;
+    gray:     #928374;
+
+    background-color: transparent;
+    text-color:       @fg;
+    font:              "JetBrainsMono Nerd Font 12";
+}
+
+window {
+    background-color: @bg0;
+    border:            2px;
+    border-color:      @orange;
+    border-radius:     12px;
+    width:              520px;
+    padding:            0px;
+}
+
+mainbox {
+    background-color: transparent;
+    padding:            12px;
+    spacing:            10px;
+}
+
+inputbar {
+    background-color: @bg1;
+    border-radius:      8px;
+    padding:             10px 14px;
+    spacing:             8px;
+    children:            [ "prompt", "entry" ];
+}
+
+prompt {
+    text-color: @orange;
+    font:        "JetBrainsMono Nerd Font Bold 12";
+}
+
+entry {
+    placeholder:       "Search…";
+    placeholder-color: @gray;
+    text-color:        @fg;
+}
+
+listview {
+    background-color:  transparent;
+    columns:             1;
+    lines:               8;
+    spacing:             4px;
+    cycle:               true;
+    dynamic:             true;
+    scrollbar:           false;
+}
+
+element {
+    background-color: transparent;
+    text-color:         @fg;
+    border-radius:       8px;
+    padding:             8px 12px;
+    spacing:             10px;
+    orientation:         horizontal;
+}
+
+element selected {
+    background-color: @bg2;
+    text-color:         @yellow;
+}
+
+element-icon {
+    size:      24px;
+    vertical-align: 0.5;
+}
+
+element-text {
+    vertical-align: 0.5;
+}
+
+message {
+    background-color: @bg1;
+    border-radius:       8px;
+    padding:             8px 12px;
+}
+
+textbox {
+    text-color: @gray;
+}
