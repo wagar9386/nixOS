@@ -69,7 +69,10 @@ window#waybar {
 #network,
 #bluetooth
 #tray {
-  margin-right: 8px;  
+  background: rgba(60, 56, 54, 0.6);
+  padding: 0 12px;
+  margin: 5px 3px;
+  border-radius: 8px;
 }
  
 #clock {
@@ -104,6 +107,7 @@ window#waybar {
 #tray {
   background: transparent;
   padding: 0 8px;
+  margin-right: 8px;
 }
  
 #tray > .passive {
