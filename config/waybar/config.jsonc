@@ -74,9 +74,9 @@
     "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>"
   },
   "bluetooth": {
-  "format": "󰂯 BT",
-  "format-disabled": "󰂲 BT",
-  "format-connected": "󰂱 BT",
+  "format": "󰂯",
+  "format-disabled": "󰂲",
+  "format-connected": "󰂱",
   "on-click": "blueman-manager",
   "interval": 30
 }

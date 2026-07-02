@@ -67,7 +67,7 @@ window#waybar {
 #memory,
 #pulseaudio,
 #network,
-#bluetooth
+#bluetooth,
 #tray {
   background: rgba(60, 56, 54, 0.6);
   padding: 0 12px;
