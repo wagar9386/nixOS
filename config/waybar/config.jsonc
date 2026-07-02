@@ -73,12 +73,12 @@
     "format-alt": "  {:%A, %d %B %Y}",
     "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>"
   },
-   "bluetooth": {
-  "format": " ",
-  "format-disabled": " ",
-  "format-connected": " ",
+  "bluetooth": {
+  "format": "󰂯 BT",
+  "format-disabled": "󰂲 BT",
+  "format-connected": "󰂱 BT",
   "on-click": "blueman-manager",
   "interval": 30
-  }
+}
 }
 
