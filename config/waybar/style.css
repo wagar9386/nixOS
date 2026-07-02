@@ -67,11 +67,13 @@ window#waybar {
 #memory,
 #pulseaudio,
 #network,
+#bluetooth
 #tray {
   background: rgba(60, 56, 54, 0.6);
   padding: 0 12px;
   margin: 5px 3px;
   border-radius: 8px;
+  margin-right: 8px;  
 }
  
 #clock {
@@ -137,15 +139,6 @@ window#waybar {
   color: #928374;
 }
 
-
-#custom-bluetooth,
-#bluetooth,
-#tray #blueman,
-#tray .bluetooth {
-  background: rgba(60, 56, 54, 0.6);
-  color: #83a598; /* Gruvbox blue-green */
-  margin-right: 8px; 
-}
 
 
 /* Optional: when disconnected/offline (if your module adds a class) */
