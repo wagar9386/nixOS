@@ -106,7 +106,7 @@ window#waybar {
 #bluetooth {
   color: #83a598;
   padding: 0 12px;
-  margin: 5px 3px;
+  margin: 5px 8px 5px 3px;
 }
 
 #tray {
