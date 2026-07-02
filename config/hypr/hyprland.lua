@@ -212,6 +212,7 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
+hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd("systemctl poweroff"))
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))
 hl.bind("END", hl.dsp.exec_cmd("grim -g \"$(slurp)\" - | swappy -f -"))
 
