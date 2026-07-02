@@ -74,10 +74,11 @@
     "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>"
   },
    "bluetooth": {
-    "format": "",
-    "interval": 5,
-    "exec": "bash -lc 'if command -v blueman-manager >/dev/null 2>&1; then echo \"\"; else echo \"\"; fi'",
-    "on-click": "bash -lc 'blueman-manager'"
-     }
+  "format": " ",
+  "format-disabled": " ",
+  "format-connected": " ",
+  "on-click": "blueman-manager",
+  "interval": 30
+  }
 }
 
