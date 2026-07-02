@@ -85,7 +85,7 @@ window#waybar {
 }
  
 #memory {
-  color: #83a598;
+  color: #fe8019;
 }
  
 #pulseaudio {
@@ -103,7 +103,12 @@ window#waybar {
 #network.disconnected {
   color: #928374;
 }
- 
+#bluetooth {
+  color: #83a598;
+  padding: 0 12px;
+  margin: 5px 3px;
+}
+
 #tray {
   background: transparent;
   padding: 0 8px;
