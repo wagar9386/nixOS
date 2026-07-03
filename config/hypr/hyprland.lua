@@ -286,6 +286,6 @@ hl.window_rule({
     match = { class = "ranger" },
     float = true,
     size  = "900 600",
-    move  = "center",
-}) 
+    move  = "510 240",
+})
 
