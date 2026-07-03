@@ -290,4 +290,11 @@ hl.window_rule({
     size  = "900 600",
     move  = "510 240",
 })
+hl.window_rule({
+    name  = "btop-float",
+    match = { class = "btop" },
+    float = true,
+    size  = "1200 700",
+    move  = "510 240",
+})
 

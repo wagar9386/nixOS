@@ -40,12 +40,14 @@
 
   "cpu": {
     "format": " {usage}%",
-    "interval": 5
+    "interval": 5,
+    "on-click": "kitty --class btop -e btop"
   },
 
   "memory": {
     "format": " {percentage}%",
-    "interval": 5
+    "interval": 5,
+    "on-click": "kitty --class btop -e btop"
   },
 
   "pulseaudio": {
