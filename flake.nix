@@ -31,7 +31,7 @@
 
         homeConfigurations.agar = home-manager.lib.homeManagerConfiguration {
             pkgs = nixpkgs.legacyPackages.${system};
-            modules = [ ./home.nix ];
+            modules = [ ./home/default.nix];
         };
     };
 }
