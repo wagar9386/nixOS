@@ -63,4 +63,16 @@
     gtk.enable = true;
     x11.enable = true;
     };
+    xdg.userDirs = {
+    enable = true;
+    createDirectories = true;
+    download = "${config.home.homeDirectory}/Downloads";
+    pictures = "${config.home.homeDirectory}/Pictures";
+    music = "${config.home.homeDirectory}/Music";
+    videos = "${config.home.homeDirectory}/Videos";
+    documents = "${config.home.homeDirectory}/Documents";
+    desktop = "${config.home.homeDirectory}/Desktop";
+    templates = "${config.home.homeDirectory}/Templates";
+    publicShare = "${config.home.homeDirectory}/Public";
+};
 }
