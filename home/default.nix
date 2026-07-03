@@ -35,6 +35,9 @@
 
     home.packages = with pkgs; [
         vesktop
+        dolphin
+        playerctl
+        pavucontrol
         feishin
         jetbrains-mono
         noto-fonts
