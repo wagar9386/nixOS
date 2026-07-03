@@ -56,6 +56,8 @@ hl.env("HYPRCURSOR_SIZE", "16")
 hl.env("LIBVA_DRIVER_NAME", "nvidia")
 hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
 hl.env("NVD_BACKEND", "direct")
+hl.env("EDITOR", "vim")
+hl.env("VISUAL", "vim")
 -----------------------
 ---- LOOK AND FEEL ----
 -----------------------
