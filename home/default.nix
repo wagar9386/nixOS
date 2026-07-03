@@ -41,6 +41,7 @@
         nerd-fonts.jetbrains-mono
         capitaine-cursors-themed
         stremio-linux-shell
+        lsd
         steam
         pkgs.prismlauncher
         pkgs.flameshot
