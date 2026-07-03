@@ -30,7 +30,7 @@ hl.dsp.exec_cmd("hyprctl dispatch moveworkspacetomonitor 2 HDMI-A-1")
 ---------------------
  
 local terminal    = "kitty"
-local fileManager = "dolphin"
+local fileManager = "kitty --class ranger -e ranger"
 local menu        = "rofi -show drun -config ~/.config/rofi/config.rasi"
  
  
@@ -281,5 +281,11 @@ hl.window_rule({
     move  = "20 monitor_h-120",
     float = true,
 })
- 
+hl.window_rule({
+    name  = "ranger-float",
+    match = { class = "ranger" },
+    float = true,
+    size  = "900 600",
+    move  = "center",
+}) 
 

@@ -46,6 +46,8 @@
         stremio-linux-shell
         lsd
         steam
+        ranger
+        ueberzugpp
         pkgs.prismlauncher
         pkgs.flameshot
         pkgs.grim
