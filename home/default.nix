@@ -67,6 +67,7 @@
     gtk.enable = true;
     x11.enable = true;
     };
+    home.file."Pictures/screenies/.keep".text = "";
     xdg.userDirs = {
     enable = true;
     createDirectories = true;
