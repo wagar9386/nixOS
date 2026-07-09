@@ -48,12 +48,13 @@
         steam
         ranger
         ueberzugpp
-        pkgs.prismlauncher
-        pkgs.flameshot
-        pkgs.grim
-        pkgs.slurp
-        pkgs.swappy
+        prismlauncher
+        flameshot
+        grim
+        slurp
+        swappy
         exiftool
+        wl-clipboard
         (pkgs.retroarch.withCores (cores: with cores; [
             mupen64plus
         ]))
