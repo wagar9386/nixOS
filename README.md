@@ -7,7 +7,7 @@
 | | |
 |---|---|
 | **OS** | NixOS unstable |
-| **WM** | Hyprland (Lua config, v0.55+) |
+| **WM** | Hyprland |
 | **Terminal** | Kitty |
 | **Shell** | Bash |
 | **Bar** | Waybar |
@@ -16,8 +16,7 @@
 | **Theme** | Gruvbox Dark |
 | **Font** | JetBrainsMono Nerd Font |
 | **Browser** | Firefox |
-| **Editor** | Neovim / Vim |
-| **GPU** | NVIDIA (open kernel modules) |
+| **Editor** | Vim |
 | **Cursor** | Capitaine Cursors (Gruvbox) |
 
 ## Programs
@@ -26,7 +25,6 @@
 | Vesktop | Discord client |
 | Feishin | Music player (Navidrome) |
 | Prismlauncher | Minecraft launcher |
-| Dolphin | GameCube / Wii emulator |
 | RetroArch | N64 emulator (Mupen64Plus core) |
 | Steam | Game launcher |
 | btop | System monitor |
