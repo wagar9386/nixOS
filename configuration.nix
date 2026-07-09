@@ -79,7 +79,6 @@
     btop
     cmatrix
     fastfetch
-    rofi
     font-awesome
     xclip
     neovim
