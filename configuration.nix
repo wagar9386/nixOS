@@ -80,7 +80,6 @@
     cmatrix
     fastfetch
     font-awesome
-    xclip
     neovim
     home-manager
     python3
