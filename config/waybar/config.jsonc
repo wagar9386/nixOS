@@ -69,8 +69,8 @@
     "format-disconnected": "󰖪  offline"
   },
 
- "custom/weather": {
-    "exec": "curl -s \"wttr.in/$(cat /run/user/1000/secrets/weather_city)?format=%c%t&m\" 2>/dev/null || echo '?--'",
+"custom/weather": {
+    "exec": "bash $HOME/.config/waybar/scripts/weather.sh",
     "interval": 888,
     "format": "{}",
     "tooltip": false
