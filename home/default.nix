@@ -59,6 +59,7 @@
         ]))
     ];
     home.pointerCursor = {
+    enable = true;
     package = pkgs.capitaine-cursors-themed;
     name = "Capitaine Cursors (Gruvbox)";
     size = 24;
