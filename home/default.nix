@@ -58,6 +58,7 @@
         exiftool
         wl-clipboard
         samba4Full
+        cifs-utils
         (pkgs.writeShellScriptBin "deemix" ''
         nix run github:bambanah/deemix#webui &
         sleep 2
