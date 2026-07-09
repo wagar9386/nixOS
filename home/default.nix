@@ -57,13 +57,11 @@
         swappy
         exiftool
         wl-clipboard
-        home.packages = [
         (pkgs.writeShellScriptBin "deemix" ''
         nix run github:bambanah/deemix#webui &
         sleep 2
         firefox http://localhost:6595
         '')
-        ];
         (pkgs.retroarch.withCores (cores: with cores; [
             mupen64plus
         ]))
