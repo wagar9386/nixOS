@@ -66,7 +66,7 @@
 
   "network": {
     "interface": "enp*",
-    "format-ethernet": " {ipaddr}",
+    "format-ethernet": "󰈀 {ipaddr}",
     "format-disconnected": "󰖪  offline"
   },
 
@@ -78,7 +78,7 @@
   },
 
   "clock": {
-    "format": "F017  {:%H:%M}",
+    "format": " {:%H:%M}",
     "format-alt": "  {:%A, %d %B %Y}",
     "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>"
   },
