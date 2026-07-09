@@ -33,9 +33,8 @@
     "exec": "python3 $HOME/.config/waybar/scripts/mediaplayer.py",
     "on-click": "playerctl play-pause",
     "on-scroll-up": "playerctl next",
-    "on-scroll-down": "playerctl previous",
-    "on-click-right": "hyprctl dispatch exec '[float; size 300 400; move 40% 60px]' $HOME/.config/waybar/scripts/media_popup.py"
-  },
+    "on-scroll-down": "playerctl previous"
+     },
 
   "cpu": {
     "format": " {usage}%",
@@ -79,7 +78,7 @@
 
   "clock": {
     "format": " {:%H:%M}",
-    "format-alt": "  {:%A, %d %B %Y}",
+    "format-alt": "{:%A, %d %B %Y}",
     "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>"
   },
 
