@@ -9,7 +9,7 @@
 
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["custom/media"],
-  "modules-right": ["pulseaudio", "network", "cpu", "memory", "clock", "bluetooth"],
+  "modules-right": ["pulseaudio", "network", "cpu", "memory", "custom/weather", "clock", "bluetooth"],
 
   "hyprland/workspaces": {
     "format": "{icon}",
@@ -19,19 +19,18 @@
       "3": "三",
       "4": "四",
       "5": "五",
-      "6": "六", 
+      "6": "六",
       "7": "七",
       "default": "{}"
     },
     "all-outputs": true
   },
 
-
   "custom/media": {
     "format": "{}",
     "return-type": "json",
     "max-length": 45,
-    "exec": "placeholder", 
+    "exec": "python3 $HOME/.config/waybar/scripts/mediaplayer.py",
     "on-click": "playerctl play-pause",
     "on-scroll-up": "playerctl next",
     "on-scroll-down": "playerctl previous",
@@ -39,48 +38,56 @@
   },
 
   "cpu": {
-    "format": " {usage}%",
+    "format": " {usage}%",
     "interval": 5,
     "on-click": "kitty --class btop -e btop"
   },
 
   "memory": {
-    "format": " {percentage}%",
+    "format": " {percentage}%",
     "interval": 5,
     "on-click": "kitty --class btop -e btop"
   },
 
   "pulseaudio": {
     "format": "{icon} {volume}%",
-    "format-muted": "  muted",
+    "format-muted": "󰖁 muted",
     "format-icons": {
-      "headphone": " ",
-      "phone": " ",
-      "portable": " ",
-      "car": " ",
-      "default": [" ", " ", " "]
+      "headphone": "󰋋",
+      "phone": "󰏲",
+      "portable": "󰏲",
+      "car": "󰄋",
+      "speaker": "󰓃",
+      "default": ["󰕿", "󰖀", "󰕾"]
     },
     "scroll-step": 5,
     "on-click": "pavucontrol"
   },
 
   "network": {
-  "interface": "enp*",
-  "format-ethernet": "󰈀  {ipaddr}",
-  "format-disconnected": "󰖪  offline"
-   },
+    "interface": "enp*",
+    "format-ethernet": "󰈀  {ipaddr}",
+    "format-disconnected": "󰖪  offline"
+  },
+
+  "custom/weather": {
+    "exec": "curl -s 'wttr.in/?format=%c%t&m' 2>/dev/null || echo '?--'",
+    "interval": 1800,
+    "format": "{}",
+    "tooltip": false
+  },
 
   "clock": {
-    "format": "  {:%H:%M}",
-    "format-alt": "  {:%A, %d %B %Y}",
+    "format": "  {:%H:%M}",
+    "format-alt": "  {:%A, %d %B %Y}",
     "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>"
   },
-  "bluetooth": {
-  "format": "󰂯",
-  "format-disabled": "󰂲",
-  "format-connected": "󰂱",
-  "on-click": "blueman-manager",
-  "interval": 30
-}
-}
 
+  "bluetooth": {
+    "format": "󰂯",
+    "format-disabled": "󰂲",
+    "format-connected": "󰂱",
+    "on-click": "blueman-manager",
+    "interval": 30
+  }
+}
