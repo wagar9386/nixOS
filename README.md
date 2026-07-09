@@ -1,7 +1,7 @@
 # ❄️ My nixOS dotfiles
 *My NixOS configuration with Hyprland, Waybar, and a modular Home Manager setup. Feel free to look around and steal anything useful!*
 
-![Desktop screenshot](assets/screenshot.png)
+![Desktop screenie](assets/screenshot.png)
 
 ## Info
 | | |
