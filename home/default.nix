@@ -7,6 +7,7 @@
         ./kitty.nix
         ./rofi.nix
         ./swappy.nix
+        ./secrets.nix
     ];
 
     home.username = "agar";

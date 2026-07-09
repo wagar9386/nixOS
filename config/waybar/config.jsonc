@@ -69,12 +69,12 @@
     "format-disconnected": "󰖪  offline"
   },
 
-  "custom/weather": {
-    "exec": "curl -s 'wttr.in/?format=%c%t&m' 2>/dev/null || echo '?--'",
-    "interval": 1800,
+ "custom/weather": {
+    "exec": "curl -s \"wttr.in/$(cat /run/user/1000/secrets/weather_city)?format=%c%t&m\" 2>/dev/null || echo '?--'",
+    "interval": 888,
     "format": "{}",
     "tooltip": false
-  },
+},
 
   "clock": {
     "format": " {:%H:%M}",

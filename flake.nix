@@ -2,14 +2,18 @@
     description = "Hyprland NixOS waga";
 
     inputs = {
-        nixpkgs.url = "nixpkgs/nixos-unstable";
-        home-manager = {
-            url = "github:nix-community/home-manager";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
+    nixpkgs.url = "nixpkgs/nixos-unstable";
+    home-manager = {
+        url = "github:nix-community/home-manager";
+        inputs.nixpkgs.follows = "nixpkgs";
     };
+    sops-nix = {
+        url = "github:Mic92/sops-nix";
+        inputs.nixpkgs.follows = "nixpkgs";
+    };
+};
     
-    outputs = { nixpkgs, home-manager, ... }: 
+    outputs = { nixpkgs, home-manager, sops-nix, ... }: 
     let
         system = "x86_64-linux";
     in
@@ -21,11 +25,13 @@
                 home-manager.nixosModules.home-manager
                 {
                     home-manager = {
-                        useGlobalPkgs = true; 
-                        useUserPackages = true;
-                        users.agar = import ./home/default.nix;
-                    };
-                }
+    			useGlobalPkgs = true;
+  			useUserPackages = true;
+    			users.agar = import ./home/default.nix;
+    			extraSpecialArgs = { inherit sops-nix; };
+    			sharedModules = [ sops-nix.homeManagerModules.sops ];
+			};           
+		 }
             ];
         };
 
