@@ -57,11 +57,17 @@
         swappy
         exiftool
         wl-clipboard
-        python313Packages.deemix
+        home.packages = [
+        (pkgs.writeShellScriptBin "deemix" ''
+        nix run github:bambanah/deemix#webui &
+        sleep 2
+        firefox http://localhost:6595
+        '')
+        ];
         (pkgs.retroarch.withCores (cores: with cores; [
             mupen64plus
         ]))
-    ];
+        ];
     home.pointerCursor = {
     enable = true;
     package = pkgs.capitaine-cursors-themed;
