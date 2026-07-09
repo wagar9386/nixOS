@@ -59,7 +59,7 @@
         wl-clipboard
         samba4Full
         cifs-utils
-        rPackages.RobLox
+        flatpak
         (pkgs.writeShellScriptBin "deemix" ''
         nix run github:bambanah/deemix#webui &
         sleep 2
