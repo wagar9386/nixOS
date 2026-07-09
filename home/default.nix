@@ -57,7 +57,7 @@
         swappy
         exiftool
         wl-clipboard
-        samba
+        samba4Full
         (pkgs.writeShellScriptBin "deemix" ''
         nix run github:bambanah/deemix#webui &
         sleep 2
