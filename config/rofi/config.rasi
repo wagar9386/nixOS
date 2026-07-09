@@ -67,21 +67,35 @@ listview {
 
 element {
     background-color: transparent;
-    text-color:       @gray;
     border-radius:    8px;
     padding:          10px 14px;
     spacing:          12px;
     orientation:      horizontal;
 }
 
-element:hover {
+element normal normal {
+    background-color: transparent;
+    text-color:       @gray;
+}
+
+element normal active {
     background-color: #504945aa;
     text-color:       @fg;
 }
 
-element selected {
+element alternate normal {
+    background-color: transparent;
+    text-color:       @gray;
+}
+
+element selected normal {
     background-color: #fe801926;
     text-color:       @yellow;
+}
+
+element selected active {
+    background-color: #fe801926;
+    text-color:       @orange;
 }
 
 element-icon {
