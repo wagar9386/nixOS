@@ -57,6 +57,7 @@
         swappy
         exiftool
         wl-clipboard
+        python313Packages.deemix
         (pkgs.retroarch.withCores (cores: with cores; [
             mupen64plus
         ]))
