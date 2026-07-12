@@ -108,7 +108,14 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
    };
  
-
+  #Only for devices on my home network
+  fileSystems."/mnt/Casa" = {
+    device = "//192.168.1.88/Casa";  
+    fsType = "cifs";
+    options = let
+        automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
+    in ["${automount_opts},credentials=/run/secrets/smb_credentials,uid=1000,gid=100"];
+  };
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
