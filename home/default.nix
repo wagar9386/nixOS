@@ -67,6 +67,7 @@
             mupen64plus
         ]))
         ];
+    xdg.configFile."hypr/hyprlock.conf".source = ../config/hypr/hyprlock.conf;
     home.pointerCursor = {
     enable = true;
     package = pkgs.capitaine-cursors-themed;
