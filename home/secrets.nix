@@ -11,9 +11,9 @@
             navidrome_user = {};
             navidrome_password = {};
             smb_credentials = {
-                path = "/run/secrets/smb_credentials";
-                mode = "0400";
-            };
+   		 path = "/run/user/1000/secrets/smb_credentials";
+   		 mode = "0400";
+		};
         };
     };
 }
