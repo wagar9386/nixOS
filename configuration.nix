@@ -79,6 +79,7 @@
     font-awesome
     neovim
     home-manager
+    unzip
     python3
   ];
 
