@@ -21,33 +21,33 @@
 | **GPU** | NVIDIA (open kernel modules) | 
 
 ## Programs
-| Program | Purpose | |
-|---|---|---|
-| Vesktop | Discord client | |
-| Feishin | Music player (Navidrome) | |
-| Prismlauncher | Minecraft launcher | |
-| RetroArch | N64 emulator (Mupen64Plus core) | |
-| Steam | Game launcher | |
-| btop | System monitor | |
+| Program | Purpose |
+|---|---|
+| Vesktop | Discord client |
+| Feishin | Music player (Navidrome) |
+| Prismlauncher | Minecraft launcher |
+| RetroArch | N64 emulator (Mupen64Plus core) |
+| Steam | Game launcher |
+| btop | System monitor |
 | Flameshot + Swappy | Screenshots with annotation | 
-| Blueman | Bluetooth manager | |
-| Pavucontrol | Audio control | |
-| Hyprpaper | Wallpaper daemon | |
-| Playerctl | Media control | |
-| Ranger | Terminal file manager | |
-| Dolphin | GameCube / Wii emulator | |
+| Blueman | Bluetooth manager |
+| Pavucontrol | Audio control |
+| Hyprpaper | Wallpaper daemon |
+| Playerctl | Media control |
+| Ranger | Terminal file manager |
+| Dolphin | GameCube / Wii emulator |
 
 ## Keybinds
-| Keybind | Action | |
-|---|---|---|
-| `SUPER + Q` | Open terminal (Kitty) | |
-| `SUPER + C` | Close window | |
-| `SUPER + R` | Open launcher (Rofi) | |
-| `SUPER + E` | Open file manager (Ranger) | |
-| `SUPER + M` | Exit Hyprland | |
-| `SUPER + SHIFT + P` | Shutdown | |
-| `SUPER + B` | Open btop | |
-| `End` | Screenshot (region, swappy) | |
+| Keybind | Action |
+|---|---|
+| `SUPER + Q` | Open terminal (Kitty) |
+| `SUPER + C` | Close window |
+| `SUPER + R` | Open launcher (Rofi) |
+| `SUPER + E` | Open file manager (Ranger) |
+| `SUPER + M` | Exit Hyprland |
+| `SUPER + SHIFT + P` | Shutdown |
+| `SUPER + B` | Open btop |
+| `End` | Screenshot (region, swappy) |
 
 ## Waybar modules
 Left: workspaces — Center: media player (click to play/pause, scroll to skip) — Right: volume, network IP, CPU (click → btop), RAM (click → btop), weather, clock, bluetooth 
