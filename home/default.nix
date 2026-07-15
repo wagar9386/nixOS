@@ -58,6 +58,8 @@
         wl-clipboard
         cifs-utils
         pkgs.hyprlock
+        pkgs.xdg-utils
+        pkgs.pcmanfm
         (pkgs.writeShellScriptBin "deemix" ''
         nix run github:bambanah/deemix#webui &
         sleep 2
