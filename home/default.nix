@@ -57,6 +57,7 @@
         pcmanfm
         gruvbox-gtk-theme
         gruvbox-plus-icons
+        moonlight-qt
         (pkgs.writeShellScriptBin "deemix" ''
             nix run github:bambanah/deemix#webui &
             sleep 2
