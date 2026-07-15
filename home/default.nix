@@ -1,5 +1,4 @@
 { config, pkgs, ... }:
-
 {
     imports = [
         ./hyprland.nix
@@ -9,11 +8,9 @@
         ./swappy.nix
         ./secrets.nix
     ];
-
     home.username = "agar";
     home.homeDirectory = "/home/agar";
     home.stateVersion = "26.05";
-
     programs.bash = {
         enable = true;
         shellAliases = {
@@ -25,7 +22,6 @@
           switch() {
             cd /home/agar/nixos-dotfiles && sudo nixos-rebuild switch --flake .#goti-nixOS
           }
-
           push() {
             git pull
             git add .
@@ -34,7 +30,6 @@
           }
         '';
     };
-
     home.packages = with pkgs; [
         vesktop
         playerctl
@@ -44,7 +39,6 @@
         vimgolf
         nerd-fonts.jetbrains-mono
         capitaine-cursors-themed
-        stremio-linux-shell
         lsd
         steam
         ranger
@@ -60,35 +54,48 @@
         hyprlock
         xdg-utils
         pcmanfm
+        gruvbox-gtk-theme
+        gruvbox-plus-icons
         (pkgs.writeShellScriptBin "deemix" ''
-        nix run github:bambanah/deemix#webui &
-        sleep 2
-        firefox http://localhost:6595
+            nix run github:bambanah/deemix#webui &
+            sleep 2
+            firefox http://localhost:6595
         '')
         (pkgs.retroarch.withCores (cores: with cores; [
             mupen64plus
         ]))
-        ];
+    ];
     xdg.configFile."hypr/hyprlock.conf".source = ../config/hypr/hyprlock.conf;
     home.pointerCursor = {
-    enable = true;
-    package = pkgs.capitaine-cursors-themed;
-    name = "Capitaine Cursors (Gruvbox)";
-    size = 24;
-    gtk.enable = true;
-    x11.enable = true;
+        enable = true;
+        package = pkgs.capitaine-cursors-themed;
+        name = "Capitaine Cursors (Gruvbox)";
+        size = 24;
+        gtk.enable = true;
+        x11.enable = true;
+    };
+    gtk = {
+        enable = true;
+        theme = {
+            name = "Gruvbox-Dark";
+            package = pkgs.gruvbox-gtk-theme;
+        };
+        iconTheme = {
+            name = "Gruvbox-Plus-Dark";
+            package = pkgs.gruvbox-plus-icons;
+        };
     };
     home.file."Pictures/screenies/.keep".text = "";
     xdg.userDirs = {
-    enable = true;
-    createDirectories = true;
-    download = "${config.home.homeDirectory}/Downloads";
-    pictures = "${config.home.homeDirectory}/Pictures";
-    music = "${config.home.homeDirectory}/Music";
-    videos = "${config.home.homeDirectory}/Videos";
-    documents = "${config.home.homeDirectory}/Documents";
-    desktop = "${config.home.homeDirectory}/Desktop";
-    templates = "${config.home.homeDirectory}/Templates";
-    publicShare = "${config.home.homeDirectory}/Public";
-};
+        enable = true;
+        createDirectories = true;
+        download = "${config.home.homeDirectory}/Downloads";
+        pictures = "${config.home.homeDirectory}/Pictures";
+        music = "${config.home.homeDirectory}/Music";
+        videos = "${config.home.homeDirectory}/Videos";
+        documents = "${config.home.homeDirectory}/Documents";
+        desktop = "${config.home.homeDirectory}/Desktop";
+        templates = "${config.home.homeDirectory}/Templates";
+        publicShare = "${config.home.homeDirectory}/Public";
+    };
 }
