@@ -45,6 +45,7 @@
         ueberzugpp
         prismlauncher
         flameshot
+        stremio-linux-shell
         grim
         slurp
         swappy
