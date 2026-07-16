@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, deemix, ... }:
 {
     imports = [
         ./hyprland.nix
