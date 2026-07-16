@@ -1,4 +1,4 @@
-{ config, pkgs, deemix, ... }:
+{ config, pkgs, ... }:
 {
     imports = [
         ./hyprland.nix
@@ -58,7 +58,6 @@
         gruvbox-gtk-theme
         gruvbox-plus-icons
         moonlight-qt
-        deemix.packages.${pkgs.system}.webui #test
         (pkgs.writeShellScriptBin "deemix" ''
             nix run github:bambanah/deemix#webui &
             sleep 2
