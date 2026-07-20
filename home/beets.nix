@@ -3,12 +3,7 @@
 {
     home.packages = [
         (pkgs.beets.override {
-            pluginOverrides = {
-                fetchart.enable = true;
-                embedart.enable = true;
-                lastgenre.enable = true;
-                lyrics.enable = true;
-            };
+            extras = true;
         })
     ];
 
