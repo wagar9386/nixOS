@@ -7,6 +7,7 @@
         ./rofi.nix
         ./swappy.nix
         ./secrets.nix
+        ./beets.nix
     ];
     home.username = "agar";
     home.homeDirectory = "/home/agar";

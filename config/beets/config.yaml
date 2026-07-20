@@ -1,0 +1,36 @@
+library: ~/.config/beets/musiclibrary.db
+
+import:
+    copy: no
+    move: no
+    write: yes
+    timid: yes
+
+match:
+    strong_rec_thresh: 0.10
+
+plugins:
+    - fetchart
+    - embedart
+    - lastgenre
+    - scrub
+    - lyrics
+
+fetchart:
+    auto: yes
+
+embedart:
+    auto: yes
+
+lastgenre:
+    auto: yes
+    force: yes
+
+scrub:
+    auto: yes
+
+lyrics:
+    auto: yes
+    sources:
+        - genius
+        - musixmatch

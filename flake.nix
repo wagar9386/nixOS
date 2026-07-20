@@ -3,7 +3,6 @@
 
     inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    deemix.url = "github:bambanah/deemix"; #test
     home-manager = {
         url = "github:nix-community/home-manager";
         inputs.nixpkgs.follows = "nixpkgs";
@@ -14,7 +13,7 @@
     };
 };
     
-    outputs = { nixpkgs, home-manager, sops-nix, deemix, ... }: 
+    outputs = { nixpkgs, home-manager, sops-nix, ... }: 
     let
         system = "x86_64-linux";
     in
@@ -30,7 +29,7 @@
   			useUserPackages = true;
     			users.agar = import ./home/default.nix;
     			extraSpecialArgs = {
-  				 inherit sops-nix deemix;
+  				 inherit sops-nix;
 			                   };    			
 			sharedModules = [ sops-nix.homeManagerModules.sops ];
 			};           
