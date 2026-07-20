@@ -7,7 +7,6 @@
         ./rofi.nix
         ./swappy.nix
         ./secrets.nix
-        ./beets.nix
     ];
     home.username = "agar";
     home.homeDirectory = "/home/agar";
@@ -59,8 +58,6 @@
         gruvbox-gtk-theme
         gruvbox-plus-icons
         moonlight-qt
-	nicotine-plus
-	beets
         (pkgs.writeShellScriptBin "deemix" ''
             nix run github:bambanah/deemix#webui &
             sleep 2
