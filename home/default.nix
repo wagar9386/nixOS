@@ -58,7 +58,8 @@
         gruvbox-gtk-theme
         gruvbox-plus-icons
         moonlight-qt
-	pkgs.nicotine-plus
+	nicotine-plus
+	beets
         (pkgs.writeShellScriptBin "deemix" ''
             nix run github:bambanah/deemix#webui &
             sleep 2
