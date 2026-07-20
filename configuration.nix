@@ -118,6 +118,23 @@
 in ["${automount_opts},credentials=/run/user/1000/secrets/smb_credentials,uid=1000,gid=100"];
   };
 
+  virtualisation.oci-containers.backend = "docker";
+
+  virtualisation.oci-containers.containers.deemix = {
+  image = "ghcr.io/bambanah/deemix:latest";
+  ports = [ "6595:6595" ];
+  volumes = [
+    "/home/agar/.config/deemix:/config"
+    "/home/agar/Music:/downloads"
+  ];
+  environment = {
+    DEEMIX_SINGLE_USER = "true";
+    PUID = "1000";
+    PGID = "100"; 
+  };
+  };
+
+
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
