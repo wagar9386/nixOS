@@ -46,7 +46,6 @@
 | `SUPER + E` | Open file manager (Ranger) |
 | `SUPER + M` | Exit Hyprland |
 | `SUPER + SHIFT + P` | Shutdown |
-| `SUPER + B` | Open btop |
 | `End` | Screenshot (region, swappy) |
 
 ## Waybar modules
