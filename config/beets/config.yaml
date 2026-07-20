@@ -10,27 +10,8 @@ match:
     strong_rec_thresh: 0.10
 
 plugins:
-    - fetchart
-    - embedart
-    - lastgenre
-    - scrub
-    - lyrics
+    - musicbrainz
 
-fetchart:
-    auto: yes
-
-embedart:
-    auto: yes
-
-lastgenre:
-    auto: yes
-    force: yes
-
-scrub:
-    auto: yes
-
-lyrics:
-    auto: yes
-    sources:
-        - genius
-        - musixmatch
+paths:
+    default: $albumartist/$year - $album/$track - $title
+    singleton: $artist/Singles/$title
