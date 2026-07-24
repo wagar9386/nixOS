@@ -134,6 +134,7 @@ in ["${automount_opts},credentials=/run/user/1000/secrets/smb_credentials,uid=10
   };
   };
 
+  programs.gamemode.enable = true;
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
