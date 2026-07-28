@@ -59,6 +59,7 @@
         gruvbox-plus-icons
         moonlight-qt
 	localsend
+        zip
         (pkgs.writeShellScriptBin "deemix" ''
             nix run github:bambanah/deemix#webui &
             sleep 2
