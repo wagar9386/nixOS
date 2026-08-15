@@ -7,6 +7,7 @@
         ./rofi.nix
         ./swappy.nix
         ./secrets.nix
+        ./activitywatch.nix
     ];
     home.username = "agar";
     home.homeDirectory = "/home/agar";
@@ -16,6 +17,7 @@
         shellAliases = {
             buh = "fastfetch";
             ls = "lsd";
+            aw = "firefox http://localhost:5600";
         };
         initExtra = ''
             PS1='\[\e[38;2;211;134;155m\]waga\[\e[0m\](\[\e[38;2;131;165;152m\]\W\[\e[0m\])\[\e[38;2;211;134;155m\]\$\[\e[0m\] ' 
