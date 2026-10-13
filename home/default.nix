@@ -60,7 +60,8 @@
         moonlight-qt
 	localsend
         zip
-	globulation2
+        unvanquished
+	mpv
         (pkgs.writeShellScriptBin "deemix" ''
             nix run github:bambanah/deemix#webui &
             sleep 2
