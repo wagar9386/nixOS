@@ -65,6 +65,8 @@
 	pvzge
 	pvz-portable
 	zeroad
+	tasks
+	vulnix
         (pkgs.writeShellScriptBin "deemix" ''
             nix run github:bambanah/deemix#webui &
             sleep 2
