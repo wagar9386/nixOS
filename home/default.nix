@@ -62,6 +62,9 @@
         zip
         unvanquished
 	mpv
+	pvzge
+	pvz-portable
+	zeroad
         (pkgs.writeShellScriptBin "deemix" ''
             nix run github:bambanah/deemix#webui &
             sleep 2
