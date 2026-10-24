@@ -81,6 +81,7 @@
     home-manager
     unzip
     python3
+    wine64
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

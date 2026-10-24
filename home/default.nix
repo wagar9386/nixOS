@@ -67,6 +67,8 @@
 	zeroad
 	tasks
 	vulnix
+	ntfs3g
+	legendary-gl
         (pkgs.writeShellScriptBin "deemix" ''
             nix run github:bambanah/deemix#webui &
             sleep 2
