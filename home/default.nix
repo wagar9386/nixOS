@@ -69,6 +69,7 @@
 	vulnix
 	ntfs3g
 	legendary-gl
+	sly
         (pkgs.writeShellScriptBin "deemix" ''
             nix run github:bambanah/deemix#webui &
             sleep 2
