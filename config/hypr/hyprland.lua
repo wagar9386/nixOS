@@ -43,7 +43,7 @@ hl.on("hyprland.start", function()
   hl.exec_cmd("firefox", { workspace = "2" })
   hl.exec_cmd("vesktop", { workspace = "1" })
   hl.exec_cmd("tasks", {workspace = "1" })
-  hl.exec_cmd("feishin", {workspace = "3"})
+  hl.exec_cmd("feishin", {workspace = "2"})
 end)
 -------------------------------
 ---- ENVIRONMENT VARIABLES ----
