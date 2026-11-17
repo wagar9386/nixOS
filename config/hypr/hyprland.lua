@@ -40,11 +40,11 @@ local menu        = "rofi -show drun -config ~/.config/rofi/config.rasi"
  
 hl.on("hyprland.start", function()
   hl.exec_cmd("systemctl --user start graphical-session.target")
+  hl.exec_cmd("firefox", { workspace = "2" })
+  hl.exec_cmd("vesktop", { workspace = "1" })
+  hl.exec_cmd("tasks", {workspace = "1" })
+  hl.exec_cmd("feishin", {workspace = "3"})
 end)
--- in startup/init section
-hl.dsp.exec_cmd("[workspace 2 silent] firefox")
-hl.dsp.exec_cmd("[workspace 1 silent] vesktop")
-hl.dsp.exec_cmd("[workspace 3 silent] feishin")
 -------------------------------
 ---- ENVIRONMENT VARIABLES ----
 -------------------------------
